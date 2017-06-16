@@ -17,7 +17,11 @@ export default class Signup extends React.Component {
     let password = this.refs.password.value.trim();
 
     Accounts.createUser({email, password}, (err) => {
-      console.log('callback',  err);
+      if (err) {
+        this.setState({error: err.reason});
+      } else {
+        this.setState({error: ''});
+      }
     })
 
     // this.setState({
@@ -31,7 +35,7 @@ export default class Signup extends React.Component {
 
         { this.state.error ? <p>{this.state.error}</p> : undefined }
 
-        <form onSubmit={this.submitForm.bind(this)}>
+        <form onSubmit={this.submitForm.bind(this)} noValidate>
           <input type="email" ref="email" name="email" placeholder="Email" />
           <input type="password" ref="password" name="password" placeholder="Password" />
           <button>Create Account</button>
