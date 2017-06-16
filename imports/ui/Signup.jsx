@@ -16,6 +16,10 @@ export default class Signup extends React.Component {
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
 
+    if ( password.length < 6 ) {
+      return this.setState({error: 'Password must be 6 characters long.'})
+    }
+
     Accounts.createUser({email, password}, (err) => {
       if (err) {
         this.setState({error: err.reason});
