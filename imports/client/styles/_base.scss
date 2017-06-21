@@ -8,6 +8,26 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: $base-font-size;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+
+a {
+  color: black;
+}
+
+p {
+  margin-bottom: $space;
+}
+
+input[type=text], input[type=email], input[type=password] {
+  border:1px solid $input-border-color;
+  font-size: $base-font-size;
+  margin-bottom: $space;
+  padding: $input-spacing;
 }
