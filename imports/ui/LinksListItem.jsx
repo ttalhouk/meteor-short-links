@@ -44,10 +44,12 @@ class LinksListItem extends React.Component {
 
   render () {
     return(
-      <div>
-        <p>{this.props.url}</p>
-        <p>{this.props.shortUrl}</p>
-        {this.renderAnalytics()}
+      <div className="item">
+        <h2>{this.props.url}</h2>
+        <div  className="item__message">          
+          <p>{this.props.shortUrl}</p>
+          {this.renderAnalytics()}
+        </div>
         <a
           href={this.props.shortUrl}
           target="_blank"

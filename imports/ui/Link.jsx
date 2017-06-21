@@ -10,10 +10,12 @@ import LinksListFilters from './LinksListFilters';
 export default () => {
   return(
     <div>
-      <PrivateHeader title="Your Links" />
-      <LinksListFilters />
-      <AddLink />
-      <LinksList />
+      <PrivateHeader title="Short Links" />
+      <div className="wrapper">        
+        <LinksListFilters />
+        <AddLink />
+        <LinksList />
+      </div>
     </div>
   )
 }
